@@ -1,0 +1,24 @@
+{{ define "main" }}
+  <h1>{{ .Title }}</h1>
+  {{ .Content }}
+
+  {{/* Keep taxonomy navigation on the posts page instead of the homepage footer. */}}
+  {{ with .Site.Taxonomies.tags.Alphabetical }}
+    <p class="post-tags-nav">
+      {{ range $index, $tag := . }}
+        {{ if gt $index 0 }}, {{ end }}<a href="{{ $tag.Page.RelPermalink }}">#{{ $tag.Page.Title }}</a>
+      {{ end }}
+    </p>
+  {{ end }}
+
+  <div class="time-list">
+    <ul>
+      {{ range .Pages }}
+        <li>
+          <span>{{- partial "date" .Date -}}</span>
+          <div><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></div>
+        </li>
+      {{ end }}
+    </ul>
+  </div>
+{{ end }}

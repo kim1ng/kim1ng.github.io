@@ -1,0 +1,10 @@
+{{ define "main" }}
+  <h1>{{ .Title }}</h1>
+  {{ .Content }}
+
+  <p>
+    {{ range $index, $page := .Pages }}
+      {{ if gt $index 0 }}, {{ end }}<a href="{{ $page.RelPermalink }}">#{{ $page.LinkTitle }}</a>
+    {{ end }}
+  </p>
+{{ end }}

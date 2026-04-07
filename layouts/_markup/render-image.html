@@ -1,0 +1,20 @@
+{{- $alt := .Text -}}
+{{- $src := .Destination -}}
+{{- $title := .Title -}}
+
+{{/* Resolve bundle-local images so each post can keep its assets in the same folder. */}}
+{{- if not (or (hasPrefix $src "http://") (hasPrefix $src "https://") (hasPrefix $src "/")) -}}
+  {{- $src = printf "%s%s" .Page.RelPermalink $src -}}
+{{- end -}}
+
+<figure>
+  <img
+    src="{{ $src }}"
+    alt="{{ $alt }}"
+    loading="lazy"
+    {{ with $title }}title="{{ . }}"{{ end }}
+  />
+  {{- with $alt }}
+    <figcaption>{{ . }}</figcaption>
+  {{ end -}}
+</figure>

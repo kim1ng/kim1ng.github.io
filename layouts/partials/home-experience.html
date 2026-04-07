@@ -1,0 +1,22 @@
+{{/* Experience entries come from data/experience.toml for a compact homepage CV section. */}}
+{{ with hugo.Data.experience.items }}
+  <section class="home-section">
+    <h2 class="home-section-title">Experience</h2>
+    <div class="experience-list">
+      {{ range . }}
+        <article class="experience-card">
+          <p class="experience-heading">
+            <span class="experience-org">{{ .organization }}</span>,
+            <span class="experience-period">{{ replace .period "~" " ~ " }}</span>
+          </p>
+          {{ with .role }}
+            <p class="experience-role">{{ . | markdownify }}</p>
+          {{ end }}
+          {{ with .summary }}
+            <p class="experience-summary">{{ . | markdownify }}</p>
+          {{ end }}
+        </article>
+      {{ end }}
+    </div>
+  </section>
+{{ end }}

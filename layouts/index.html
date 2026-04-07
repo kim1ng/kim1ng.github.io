@@ -1,0 +1,14 @@
+{{ define "main" }}
+  <section class="home-hero">
+    <img class="home-avatar" src="/images/profile.jpg" alt="{{ .Site.Title }}" />
+    <div class="home-intro">
+      {{ .Content }}
+    </div>
+  </section>
+
+  {{/* Keep homepage links separate from hero copy so profile/contact targets stay config-driven. */}}
+  {{ partial "home-navigator.html" . }}
+  {{ partial "home-news.html" . }}
+  {{ partial "home-projects.html" . }}
+  {{ partial "home-experience.html" . }}
+{{ end }}

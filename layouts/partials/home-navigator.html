@@ -1,0 +1,16 @@
+{{/* Navigator links live in hugo.toml so contact/profile edits do not require template changes. */}}
+{{ with .Site.Params.navigator }}
+  <section class="home-navigator" aria-label="Navigator">
+    <nav>
+      <ul>
+        {{ range . }}
+          {{ if or (not (isset . "enabled")) .enabled }}
+            <li>
+              <a href="{{ .url }}"{{ if .external }} target="_blank" rel="noreferrer"{{ end }}>{{ .label }}</a>
+            </li>
+          {{ end }}
+        {{ end }}
+      </ul>
+    </nav>
+  </section>
+{{ end }}

@@ -1,0 +1,49 @@
+baseURL = 'https://kim1ng.github.io/'
+languageCode = 'en-US'
+title = 'Jinming Wu'
+theme = 'shibui'
+
+[params]
+comments = false
+showtoc = true
+showreadingtime = true
+showlastmod = false
+
+[params.author]
+    name = 'Jinming Wu'
+    email = 'kiming1206@gmail.com'
+
+[[params.navigator]]
+    label = 'Email'
+    url = 'mailto:kiming1206@gmail.com'
+    external = true
+    enabled = true
+
+[[params.navigator]]
+    label = 'Github'
+    url = 'https://github.com/kim1ng'
+    external = true
+    enabled = true
+
+[[params.navigator]]
+    label = 'Scholar'
+    url = 'https://scholar.google.com/citations?user=eh-XJIoAAAAJ&hl=en'
+    external = true
+    enabled = true
+
+[[params.navigator]]
+    label = 'Twitter'
+    url = 'https://x.com/_wujinming'
+    external = true
+
+[[params.navigator]]
+    label = 'Posts'
+    url = '/posts/'
+    external = false
+    enabled = false
+
+[[params.navigator]]
+    label = 'About Me'
+    url = '/about/'
+    external = false
+    enabled = false

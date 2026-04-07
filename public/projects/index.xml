@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Projects on Jinming Wu</title>
+    <link>https://kim1ng.github.io/projects/</link>
+    <description>Recent content in Projects on Jinming Wu</description>
+    <generator>Hugo</generator>
+    <language>en-US</language>
+    <managingEditor>kiming1206@gmail.com (Jinming Wu)</managingEditor>
+    <webMaster>kiming1206@gmail.com (Jinming Wu)</webMaster>
+    <lastBuildDate>Wed, 25 Jun 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://kim1ng.github.io/projects/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>MMSearch-R1: Incentivizing LMMs to Search</title>
+      <link>https://kim1ng.github.io/projects/mmsearch_r1/</link>
+      <pubDate>Wed, 25 Jun 2025 00:00:00 +0000</pubDate><author>kiming1206@gmail.com (Jinming Wu)</author>
+      <guid>https://kim1ng.github.io/projects/mmsearch_r1/</guid>
+      <description>MMSearch-R1 is an e2e RL framework that enables LMMs to perform on-demand, multi-turn search with real-world multimodal search tools. MMSearch-R1-7B model outperforms same-size traditional RAG baselines and cuts search calls by over 30%.</description>
+    </item>
+    <item>
+      <title>LLaVA-Video: Video Instruction Tuning With Synthetic Data</title>
+      <link>https://kim1ng.github.io/projects/llava_video/</link>
+      <pubDate>Thu, 03 Oct 2024 00:00:00 +0000</pubDate><author>kiming1206@gmail.com (Jinming Wu)</author>
+      <guid>https://kim1ng.github.io/projects/llava_video/</guid>
+      <description>LLaVA-Video series models are Video-LLMs fully trained on our high-quality synthetic dataset, LLaVA-Video-178K, which comprises 178K video captions and 1.15M video QAs. Our models demonstrate strong performance across 10+ video understanding tasks.</description>
+    </item>
+    <item>
+      <title>MDR: Model-Specific Demonstration Retrieval at Inference Time for In-Context Learning</title>
+      <link>https://kim1ng.github.io/projects/mdr/</link>
+      <pubDate>Tue, 04 Jun 2024 00:00:00 +0000</pubDate><author>kiming1206@gmail.com (Jinming Wu)</author>
+      <guid>https://kim1ng.github.io/projects/mdr/</guid>
+      <description>MDR proposed a simple and effective metric to measure the preference of different LLMs for demonstrations and leveraged this metric to improve demonstration retrieval frameworks at inference stage.</description>
+    </item>
+  </channel>
+</rss>

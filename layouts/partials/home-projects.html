@@ -1,0 +1,60 @@
+{{/* Projects stay as regular content pages so they can later grow into full detail pages. */}}
+{{ $projects := sort (where site.RegularPages "Section" "projects") "Params.weight" "asc" }}
+{{ with $projects }}
+  <section class="home-section">
+    <h2 class="home-section-title">Projects</h2>
+    <div class="project-list">
+      {{ range . }}
+        {{ $project := . }}
+        {{ $cover := .Params.cover }}
+        {{ $siteAuthor := site.Params.author.name }}
+        {{/* Prefer a bundle-local cover image when present, but keep front matter fallback support. */}}
+        {{ with .Resources.GetMatch "cover*" }}
+          {{ $cover = .RelPermalink }}
+        {{ end }}
+        <article class="project-card">
+          <div class="project-cover">
+            {{ if $cover }}
+              <img src="{{ $cover }}" alt="{{ .Title }}" />
+            {{ else }}
+              <div class="project-cover-placeholder">Preview coming soon</div>
+            {{ end }}
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">
+              <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+            </h3>
+            {{ with .Params.authors }}
+              <p class="project-authors">
+                {{- range $index, $author := . -}}
+                  {{- if gt $index 0 }}, {{ end -}}
+                  {{- if eq $author $siteAuthor -}}
+                    <strong>{{ $author }}</strong>
+                  {{- else -}}
+                    {{ $author }}
+                  {{- end -}}
+                {{- end -}}
+              </p>
+            {{ end }}
+            {{ if or .Params.venue .Params.links }}
+              <p class="project-meta-line">
+                {{ with .Params.venue }}
+                  <span class="project-venue">{{ . }}</span>
+                {{ end }}
+                {{ with .Params.links }}
+                  {{ if $project.Params.venue }}<span class="project-meta-sep">|</span>{{ end }}
+                  <span class="project-links">
+                    {{- range $index, $link := . -}}
+                      {{- if gt $index 0 -}}<span class="project-meta-sep">|</span>{{ end -}}<a href="{{ $link.url }}" target="_blank" rel="noreferrer">{{ $link.label }}</a>
+                    {{- end -}}
+                  </span>
+                {{ end }}
+              </p>
+            {{ end }}
+            <p class="project-summary">{{ .Params.summary | default .Summary }}</p>
+          </div>
+        </article>
+      {{ end }}
+    </div>
+  </section>
+{{ end }}

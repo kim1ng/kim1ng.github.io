@@ -1,0 +1,14 @@
+{{/* News comes from data/news.toml so the homepage can render a short timeline without creating full content pages. */}}
+{{ with hugo.Data.news.items }}
+  <section class="home-section">
+    <h2 class="home-section-title">News</h2>
+    <ul class="news-list">
+      {{ range first 5 . }}
+        <li>
+          <time datetime="{{ .date }}">{{ .date }}</time>
+          <div>{{ .text | markdownify }}</div>
+        </li>
+      {{ end }}
+    </ul>
+  </section>
+{{ end }}

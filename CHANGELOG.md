@@ -12,6 +12,11 @@
 - Navigator items are declared in `hugo.toml` under `[[params.navigator]]`.
 - Added an `enabled` flag so links like `Posts` or `About Me` can be hidden without editing templates.
 
+### Deployment
+- Added a GitHub Pages workflow in `.github/workflows/hugo.yaml`.
+- Core logic: GitHub Actions checks out the repo with recursive submodules, builds the Hugo site, and deploys the generated `public/` directory through the official Pages actions.
+- Added the Hugo image cache configuration in `hugo.toml` to keep the Pages build aligned with Hugo's recommended GitHub Pages setup.
+
 ### News
 - Added `layouts/partials/home-news.html` and `data/news.toml`.
 - Homepage news is rendered from data entries instead of content pages.
